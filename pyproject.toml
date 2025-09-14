@@ -10,6 +10,10 @@ jupyter = "^1.1.1"
 pandas = "^2.3.2"
 numpy = "^2.3.3"
 matplotlib = "^3.10.6"
+python-binance = "^1.0.29"
+tqdm = "^4.67.1"
+pykeepass = "^4.1.1.post1"
+hvac = "^2.3.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
