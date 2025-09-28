@@ -2,6 +2,28 @@
 
 Ce document décrit l'architecture du Data Lab Hermes, une plateforme conçue pour l'ingestion, la transformation et l'analyse de données financières en vue de développer et backtester des stratégies de trading.
 
+## 🚀 **MISE À JOUR MAJEURE - VectorBT Compatible**
+
+**✅ Environnement Python 3.10 - VectorBT Professionnel Activé**
+
+- **🐍 Python 3.10.x** - Compatible avec VectorBT pour backtesting avancé
+- **🧮 VectorBT 0.25.5** - Backtesting professionnel avec métriques avancées
+- **📊 Métriques Pro** - Sharpe, Calmar, VaR, CVaR, analyse des drawdowns
+- **⚡ Performance** - NumPy 1.23.x et Pandas 2.3.x optimisés
+- **📈 Graphiques** - Visualisations interactives intégrées
+
+### 🎯 **Activation Rapide**
+```bash
+# Activer l'environnement optimisé
+./activate_hermes.sh
+
+# Lancer Jupyter Lab
+jupyter lab notebooks/
+
+# Tester VectorBT
+python -c "import vectorbt as vbt; print(f'VectorBT {vbt.__version__} OK')"
+```
+
 🏛️ Architecture Générale : Modèle Medallion
 
 L'architecture repose sur le modèle Medallion en trois couches (Bronze, Argent, Or). Ce modèle garantit une séparation claire des responsabilités, une traçabilité des données et une montée en qualité progressive, de la donnée brute à la donnée prête à l'emploi.
