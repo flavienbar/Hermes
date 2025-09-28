@@ -289,3 +289,28 @@ Ajouter un système de versioning/metadata à chaque couche.
 Tracker la qualité des données à la couche Argent.
 
 Séparer backtesting et production pour Or.
+
+
+raph TD
+    subgraph Zone Bronze
+        A[API Exchange] --> B(Minio: /bronze/btcusdt_raw.parquet);
+    end
+
+    subgraph Zone Silver
+        B --> C{Nettoyage/Typage};
+        C --> D(Minio: /silver/btcusdt_clean.parquet);
+    end
+
+    subgraph Zone Gold
+        D --> E[Hub d'Indicateurs];
+        E --> F1[Mart Stratégie 1];
+        E --> F2[Mart Stratégie 2];
+    end
+
+    subgraph Couche de Décision
+        F1 & F2 --> G{Moteur de Décision};
+        G --> H[decision_log];
+        H --> I[order_log];
+    end
+
+    I --> J[API Exchange];
